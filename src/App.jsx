@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
 import './styles/vhs.css';
 import './styles/variable.css';
+import NewPokemonButton from './components/NewPokemonButton/NewPokemonButton';
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
 
-  useEffect(() => {
-    const fetchPokemon = async () => {
-      const randomId = Math.floor(Math.random() * 898) + 1; // 898 is Gen 1-8 range
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-      const data = await res.json();
-      setPokemon(data);
-    };
 
+  const fetchPokemon = async () => {
+    const randomId = Math.floor(Math.random() * 898) + 1; // 898 is Gen 1-8 range
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+    const data = await res.json();
+    setPokemon(data); // Update state with the new Pokémon
+  };
+
+  useEffect( ()=> {
     fetchPokemon();
-  }, []);
+  },[]);
 
   if (!pokemon) return <div style={{ textAlign: 'center', marginTop: '50px' }}>Loading...</div>;
 
@@ -35,6 +37,10 @@ function App() {
         ))}
       </div>
     </div>
+      {/* Button to fetch new Pokémon */}
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <NewPokemonButton onClick={fetchPokemon} />
+      </div>
     </div>
   );
 }
