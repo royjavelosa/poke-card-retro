@@ -1,0 +1,21 @@
+:root {
+    /* Colors */
+    --primary-color: #3b4cca; /* Pokémon blue */
+    --accent-color: #ffcb05;  /* Pokémon yellow */
+    --background-dark: #111;  /* Dark background for retro VHS */
+    --background-light: #eee; /* Light background for cards */
+    --text-color-dark: #000;  /* Black text for cards */
+    --text-color-light: #fff; /* White text for dark backgrounds */
+  
+    /* Fonts */
+    --font-family-main: 'Arial', sans-serif;
+  
+    /* Sizing */
+    --font-size-normal: 16px;
+    --border-radius: 10px;
+    --button-padding: 10px 20px;
+  
+    /* Effects */
+    --box-shadow-default: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  

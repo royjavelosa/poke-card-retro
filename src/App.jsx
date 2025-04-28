@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './styles/vhs.css';
+import './styles/variable.css';
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
