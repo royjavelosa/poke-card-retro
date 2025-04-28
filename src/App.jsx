@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './styles/vhs.css';
 
 function App() {
   const [pokemon, setPokemon] = useState(null);
@@ -17,8 +18,9 @@ function App() {
   if (!pokemon) return <div style={{ textAlign: 'center', marginTop: '50px' }}>Loading...</div>;
 
   return (
-    <div style={styles.card}>
-      <h2 style={styles.name}>{pokemon.name.toUpperCase()}</h2>
+    <div className="vhs-background">
+      <div style={styles.card}>
+      <h2 h2 style={styles.name}>{pokemon.name.toUpperCase()}</h2>
       <img
         src={pokemon.sprites.other['official-artwork'].front_default}
         alt={pokemon.name}
@@ -31,6 +33,7 @@ function App() {
           </p>
         ))}
       </div>
+    </div>
     </div>
   );
 }
@@ -46,6 +49,7 @@ const styles = {
     boxShadow: '5px 5px 15px rgba(0,0,0,0.3)',
     textAlign: 'center',
     fontFamily: 'Arial, sans-serif',
+    color: '#000',
   },
   name: {
     marginBottom: '15px',
