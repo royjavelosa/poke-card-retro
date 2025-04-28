@@ -1,4 +1,4 @@
-import './NewPokemonButton/NewPokemonButton.css';
+import './NewPokemonButton.css';
 
 function NewPokemonButton({onClick}) {
     return (
